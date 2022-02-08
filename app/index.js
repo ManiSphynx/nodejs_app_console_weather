@@ -14,22 +14,14 @@ const main = async () => {
     options = await inquirerMenu();
     switch (options) {
       case 1:
-        // show message
         const city = await leerInput("Ciudad:");
         const places = await search.ciudad(city);
         const idSelected = await listarLugares(places);
         const placeSelected = places.find((p) => p.id === idSelected);
         const { nombre, lng, lat } = placeSelected;
-
         const clima = await search.clima(lat, lng);
         const { temp, temp_min, temp_max } = clima;
-        // search city
 
-        // select city
-
-        // Clima
-
-        // show results
         console.log("\nInformacion de la ciudad\n".green);
         console.log("CIUDAD:", nombre);
         console.log("LATITUD:", lat);
