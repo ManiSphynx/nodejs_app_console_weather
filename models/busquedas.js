@@ -1,13 +1,20 @@
-const busquedas = async () => {
-  let historial = [];
+const axios = require("axios");
+require("dotenv").config();
+const token = process.env.MAPBOXTOKEN;
+class Busquedas {
+  constructor() {}
 
-  const ciudades = ciudad();
+  async ciudad(lugar = "") {
+    try {
+      const respuesta = await axios.get(
+        `https://api.mapbox.com/geocoding/v5/mapbox.places/moreli.json?language=es&access_token=${token}`
+      );
+      console.log(respuesta.data);
+      return [];
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+}
 
-  return ciudades;
-};
-
-const ciudad = async (busqueda = "") => {
-  console.log(busqueda);
-};
-
-module.exports = busquedas;
+module.exports = Busquedas;

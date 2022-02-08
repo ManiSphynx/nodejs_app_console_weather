@@ -1,9 +1,9 @@
 const { leerInput, inquirerMenu, pausa } = require("../helpers/inquirer");
-const busquedas = require("../models/busquedas");
+const Busquedas = require("../models/busquedas");
 
 const main = async () => {
   let options = "";
-  const search = busquedas();
+  const search = new Busquedas();
 
   do {
     options = await inquirerMenu();
@@ -11,7 +11,7 @@ const main = async () => {
       case 1:
         // show message
         const city = await leerInput("Ciudad:");
-        console.log(city);
+        search.ciudad(city);
 
         // search city
 
