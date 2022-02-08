@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.25.0",
     "colors": "^1.4.0",
-    "inquirer": "^8.2.0"
+    "fetch": "^1.1.0",
+    "inquirer": "^8.2.0",
+    "request": "^2.88.2"
   },
   "scripts": {
     "start": "node app/index.js"
